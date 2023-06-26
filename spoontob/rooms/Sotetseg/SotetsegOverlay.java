@@ -154,9 +154,9 @@ public class SotetsegOverlay extends RoomOverlay {
                 }
             if (this.config.showSotetsegAttackTicks())
                 if (text.equals("")) {
-                    text = text + text;
+                    text = text + getSotetsegTicksString();
                 } else {
-                    text = text + " : " + text;
+                    text = text + " : " + getSotetsegTicksString();
                 }
             Point textLocation = this.sotetseg.sotetsegNPC.getCanvasTextLocation(graphics, text, 50);
             if (this.config.fontStyle()) {

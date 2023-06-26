@@ -4,10 +4,7 @@ import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.image.BufferedImage;
 import java.io.BufferedInputStream;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Random;
+import java.util.*;
 import javax.inject.Inject;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -170,7 +167,7 @@ public class Sotetseg extends Room {
         graphics.fillRect(0, 0, TACTICAL_NUKE_SHEET.getWidth(), TACTICAL_NUKE_SHEET.getHeight());
         graphics.dispose();
         try {
-            AudioInputStream stream = AudioSystem.getAudioInputStream(new BufferedInputStream(SpoonTobPlugin.class.getResourceAsStream("/spoontob/mw2_tactical_nuke.wav")));
+            AudioInputStream stream = AudioSystem.getAudioInputStream(new BufferedInputStream(Objects.requireNonNull(SpoonTobPlugin.class.getResourceAsStream("/spoontob/mw2_tactical_nuke.wav"))));
             AudioFormat format = stream.getFormat();
             DataLine.Info info = new DataLine.Info(Clip.class, format);
             clip = (Clip)AudioSystem.getLine(info);
